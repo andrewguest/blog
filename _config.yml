@@ -4,15 +4,15 @@ title: "Andrew's Blog"
 description: "Stuff I don't want to forget"
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo.png'
-baseurl: "/"
+baseurl: ""
 include: ["_pages"]
 permalink: /:title/
 
 # Authors
 authors:
   andrew:
-    name: Andrew
-    display_name: Andrew
+    name: "Andrew"
+    display_name: "Andrew"
     email: andrew@aguest.me
     web: https://www.aguest.me
     description: "I'm just a guy with a degree in Computer Security, working as a Linux System Administrator with a love for programming."
