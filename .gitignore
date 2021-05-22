@@ -1,5 +1,7 @@
 _site
+.DS_Store
+*.swp
 .sass-cache
-node_modules
-Gemfile.lock
-*.gem
+*~
+**/.pytest_cache
+**/.vscode
