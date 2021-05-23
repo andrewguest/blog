@@ -11,8 +11,9 @@ permalink: /:title/
 # Authors
 authors:
   andrew:
-    name: "Andrew"
-    display_name: "Andrew"
+    name: Andrew
+    display_name: Andrew
+    gravatar: 49fce3d087f13323929e3070c724ae6d
     email: andrew@aguest.me
     web: https://www.aguest.me
     description: "I'm just a guy with a degree in Computer Security, working as a Linux System Administrator with a love for programming."
