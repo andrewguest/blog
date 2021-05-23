@@ -3,7 +3,7 @@ layout: post
 title:  "Create custom code snippets in VSCode"
 author: andrew
 categories: [ vscode ]
-image: assets/images/2021-05-23-post-image
+image: assets/images/2021-05-23-post-image.jpg
 featured: true
 hidden: false
 ---
