@@ -2,7 +2,7 @@
 layout: post
 title:  "Food ordering API with FastAPI and Postgres"
 author: andrew
-categories: [ python, fastapi, heroku, postgres ]
+categories: [ python, fastapi, heroku, postgres, portflio ]
 image: assets/images/2021-05-27-order-food-api.jpg
 featured: true
 hidden: false
