@@ -8,7 +8,7 @@ featured: true
 hidden: false
 ---
 
-### Try the API out: https://order-food-api.herokuapp.com/docs
+[Try out the API](https://order-food-api.herokuapp.com/docs)
 
 *Note: Allow around 30 seconds for the API to respond to your first request. Heroku puts projects in the "free" tier to sleep if they haven't been visited in a specific amount of time.
 
