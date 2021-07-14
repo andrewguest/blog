@@ -73,4 +73,6 @@ This is pretty sweet and will help save me some time in the future.
 
 ---
 
-**Resources:** [https://code.visualstudio.com/docs/editor/userdefinedsnippets#_create-your-own-snippets](https://code.visualstudio.com/docs/editor/userdefinedsnippets#_create-your-own-snippets)
+**Resources:**
+ * [https://code.visualstudio.com/docs/editor/userdefinedsnippets#_create-your-own-snippets](https://code.visualstudio.com/docs/editor/userdefinedsnippets#_create-your-own-snippets)
+ * [snippet generator app](https://snippet-generator.app)
