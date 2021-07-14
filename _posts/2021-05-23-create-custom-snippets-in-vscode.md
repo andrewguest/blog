@@ -32,17 +32,26 @@ Then either create a new snippets file by selecting "New Global Snippets File...
 Snippets are written in JSON and can define an unlimited number of snippets. Here's the snippet I ended up creating:
 
 ```json
-"Setup FastAPI project": {
-	"prefix": ["fastapi_setup"],
-	"body": [
-		"from fastapi import FastAPI, Request\n\n",
-		"app = FastAPI(\n\ttitle='',\n\tdescription='',\n\tversion='0.0.1'\n)\n\n",
-		"@app.get(\"/\", status_code=200)",
-		"async def index(welcome_message: str = \"Hello World!\"):",
-		"\treturn {\"message:\": welcome_message}\n",
-	],
-	"description": "Setup the main FastAPI project file."
-}
+"Setup the main FastAPI project file.": {
+    "prefix": ["fastapi_setup"],
+    "body": [
+        "from fastapi import FastAPI"
+	"",
+	"",
+	"app = FastAPI(",
+	"    title='',",
+	"    description='',",
+	"    version='0.0.1'",
+	")",
+	"",
+	"",
+	"@app.get(\"/\", status_code=200)",
+	"async def index(welcome_message: str = \"Hello World!\"):",
+	"    return {\"message:\": welcome_message}",
+	""
+    ],
+    "description": "Setup the main FastAPI project file."
+},
 ```
 
 * ```"Setup FastAPI project"``` defines the hint that VSCode shows you when it suggests this snippet.
@@ -64,4 +73,6 @@ This is pretty sweet and will help save me some time in the future.
 
 ---
 
-**Resources:** [https://code.visualstudio.com/docs/editor/userdefinedsnippets#_create-your-own-snippets](https://code.visualstudio.com/docs/editor/userdefinedsnippets#_create-your-own-snippets)
+**Resources:**
+ * [https://code.visualstudio.com/docs/editor/userdefinedsnippets#_create-your-own-snippets](https://code.visualstudio.com/docs/editor/userdefinedsnippets#_create-your-own-snippets)
+ * [snippet generator app](https://snippet-generator.app)
