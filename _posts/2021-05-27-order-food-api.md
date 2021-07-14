@@ -4,7 +4,7 @@ title:  "Food ordering API with FastAPI and Postgres"
 author: andrew
 categories: [ python, fastapi, heroku, postgres, portfolio ]
 image: assets/images/2021-05-27-order-food-api.jpg
-featured: true
+featured: false
 hidden: false
 ---
 
@@ -20,5 +20,3 @@ This is my first FastAPI project to be hosted on Heroku. Now, I've played with H
 Now, I haven't used a Postgres database in a while (I have an obsession with NoSQL databases and have been using them for a while) so I figured this would be a good project to use it again. Currently, this isn't an overly-complicated API but I do plan on adding to it over time.
 
 ---
-
-Github repo: https://github.com/andrewguest/fastapi-food-ordering-api
