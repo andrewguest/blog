@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title:  "Custom URL generator for stock information"
