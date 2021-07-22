@@ -40,15 +40,15 @@
 
             <ul class="navbar-nav ml-auto">
 
-                {% if page.url == "/blog" %}
-                <li class="nav-item active">
-                {% else %}
                 <li class="nav-item">
-                {% endif %}
                 	<a class="nav-link" href="https://aguest.me">Home</a>
                 </li>
 
+		{% if page.url == "/blog/" %}
+		<li class="nav-item active">
+		{% else %}
 		<li class="nav-item">
+		{% endif %}
                 	<a class="nav-link" href="{{ site.baseurl }}">Blog</a>
 		</li>
 
