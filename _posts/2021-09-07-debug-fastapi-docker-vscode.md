@@ -22,40 +22,67 @@ If you already have a Dockerfile for your project, then you can skip step 1.
 
 ---
 
-#### 1) Create the Dockerfile
+<br>
 
-Send a POST request to https://stock-sites.herokuapp.com/url/new with a comma-separated list of stock symbols as the value for the "stocks" query parameter.
+### 1) Create the Dockerfile
+
+You can use VS Code to generate a Dockerfile for you by hitting **CTRL+SHIFT+P** and then searching for "Docker: Add Docker Files to Workspace" in the pop-up box.
+Then provide answers to the prompts. For me these are the values I provided:
+
+- Select Application Platform: **Python: FastAPI**
+- What port(s) does your app listen on?: **8000**
+- Include optional Docker Compose files?: **No**
+
+After this you'll have a Dockerfile that will even create a user, inside the container, so that your application doesn't run as root (+1 for security).
+The only thing I updated was the **CMD** at the end:
+
+```Dockerfile
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "1", "--worker-class", "uvicorn.workers.UvicornWorker", "app.main:app"]
 ```
-curl -X POST "https://stock-sites.herokuapp.com/url/new" -d "stocks=HPQ,ARW,INTC"
-```
-
-You will get the URL for a custom page that will display information related to the stock(s) provided. The URL for this example is:
-> https://stock-sites.herokuapp.com/url/38aeae732492
-
-
-#### 2) GET - Visit the custom URL
-
-Now you can go to https://stock-sites.herokuapp.com/url/38aeae732492 and you will see infomration relating to the list of stocks that we supplied earlier (HP, Arrow Electronics, and Intel).
-
-![API output](../img/posts/2021-07-13-api-output.png)
-
-
-#### 3) PUT - Add new stock(s) to the URL
-
-You can add stocks to your URL by, again, sending a query parameter of "stocks" with a comma-separated list of stock symbols and they will be added to the existing list.
-
-![API PUT update](../img/posts/2021-07-13-api-put.png)
-
-
-#### 4) DELETE - Delete the stocks and URL
-
-The URL can be deleted by sending a DELETE request to the custom URL
-
-![API DELETE output](../img/posts/2021-07-13-api-delete.png)
 
 ---
+<br>
 
-[Try out the API](https://stock-sites.herokuapp.com/docs)
+### 2) Initialize Docker for debugging
 
-_Note: Allow around 30 seconds for the API to respond to your first request. Heroku puts projects in the "free" tier to sleep if they haven't been visited in a specific amount of time._
+Open the command palette again with **CTRL+SHIFT+P** and then type in "Docker: Initialize for Docker Debugging". Again, answer the prompts which are very similar to the previous ones:
 
+- Select Application Platform: **Python: FastAPI**
+- Choose the app's entry point (e.g. manage.py, app.py): **app\.py**
+
+---
+<br>
+
+### 3) Update the requirements.txt file
+
+Generating the Dockerfile overwrote my requirements.txt file, but I just activated my virtual environment and updated it with:
+
+```shell
+pip freeze > requirements.txt
+```
+
+---
+<br>
+
+### 4) Run the debugger
+
+Now, you can hit **F5** to start the VS Code debugger which will build an image based on the new Dockerfile and then start a container with that image using Uvicorn, but I use gunicorn in production so that's what I want to use for debugging.
+
+Open the **.vscode/tasks.json** file and update the "python" section to:
+```json
+"python": {
+  "args": [
+    "--bind",
+    ":8000",
+    "--workers",
+    "1",
+    "--worker-class",
+    "uvicorn.workers.UvicornWorker",
+    "app.main:app"
+  ],
+  "module": "gunicorn"
+}
+```
+
+- Start the debugger: **F5**
+- Stop the debugger **SHIFT+F5**
